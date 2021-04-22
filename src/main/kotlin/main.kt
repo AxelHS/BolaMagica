@@ -82,9 +82,10 @@ fun main(args: Array<String>) {
     }
 
     fun salir(){
+        println("Hasta luego bb")
 
     }
 
     fun mostrarError(){
-
+        println("Vaya, parece que has elegido una opcion equivocada")
     }
