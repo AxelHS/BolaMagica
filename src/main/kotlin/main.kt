@@ -20,13 +20,14 @@ val respuestas = mapOf(
     "No creo" to RESPUESTA_NEGATIVA,
 
 )
-
+//Creacion de menu, llama a las funciones dependiendo de la opcion que elijas
 fun main(args: Array<String>) {
     println("Hola soy tu magica bola. Cual de estas opciones deseas realizar?")
     println("1) Una pregunta ")
     println("2) Revisar todas las respuestas ")
     println("3) Salir")
-
+//Con el readLine pedimos datos, y con el When damos las opciones.
+//Desde 1 hasta 3, el else funciona en caso de que introduscan un valor no valido
     val valorIngresado = readLine()
     when(valorIngresado){
         "1" -> realizarPregunta()
@@ -35,7 +36,8 @@ fun main(args: Array<String>) {
         else -> mostrarError()
     }
 }
-
+//Desde aqui se crean todas las funciones que despues el menu "valorIngresado" las llama
+// Realizar pregunta: Solicita un dato y imprime los dos mensajes
     fun realizarPregunta(){
         println("Que pregunta deseas realizar")
         readLine()
@@ -45,7 +47,7 @@ fun main(args: Array<String>) {
         println(respuestaGenerada)
 
     }
-
+//Revisar Respuestas: Esta principalmente muestra todas las posibles respuestas que puede dar, Afirmativas, Negativas o Dudosas
     fun revisarRespuestas(){
         println("Selecciona una opcion")
         println("1) Revisar todas las respuestas")
@@ -63,6 +65,7 @@ fun main(args: Array<String>) {
         }
     }
 
+//Revisar Respuestas esta funcion genera la respuesta
     fun revisarRespuestasPorTipo( tipoDeRespuesta : String = "TODOS"  ){
         when (tipoDeRespuesta){
             "TODOS" -> respuestas.keys.forEach{ respuesta -> println(respuesta) }
